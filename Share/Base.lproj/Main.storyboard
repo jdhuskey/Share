@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qgr-E2-RfI">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qgr-E2-RfI" customClass="CustomView" customModule="Share" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="150"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ShareLogo" translatesAutoresizingMaskIntoConstraints="NO" id="8J2-Cs-wly">
@@ -38,7 +38,7 @@
                                     <constraint firstItem="8J2-Cs-wly" firstAttribute="leading" secondItem="Qgr-E2-RfI" secondAttribute="leading" constant="8" id="vYo-xi-OiC"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4O-cV-aaD">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4O-cV-aaD" customClass="CustomView" customModule="Share" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="592" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you do not have an account, one will be automatically created for you." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwx-YJ-TQT">
@@ -63,7 +63,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.86946168664383561" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIN-NC-exZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIN-NC-exZ" customClass="RoundButton" customModule="Share" customModuleProvider="target">
                                 <rect key="frame" x="127" y="253.5" width="120" height="120"/>
                                 <color key="backgroundColor" red="0.22919061779975891" green="0.34924262762069702" blue="0.59513628482818604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -73,22 +73,22 @@
                                 <state key="normal" image="f"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WnV-G4-OtB">
-                                <rect key="frame" x="56" y="413.5" width="263" height="121"/>
+                                <rect key="frame" x="56" y="413.5" width="263" height="111"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email address" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1B-dp-rHX">
-                                        <rect key="frame" x="0.0" y="0.0" width="263" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1B-dp-rHX" customClass="CustomTextField" customModule="Share" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="263" height="25"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87323416099999995" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqm-rm-DwA">
-                                        <rect key="frame" x="0.0" y="42" width="263" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqm-rm-DwA" customClass="CustomTextField" customModule="Share" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="37" width="263" height="25"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87323416099999995" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeN-BI-QeX">
-                                        <rect key="frame" x="0.0" y="84" width="263" height="37"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeN-BI-QeX" customClass="CustomSignInButton" customModule="Share" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="74" width="263" height="37"/>
                                         <color key="backgroundColor" red="0.0" green="0.78431372549019607" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
                                         <state key="normal" title="Sign In">
