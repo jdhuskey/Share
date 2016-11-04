@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FD0F0371DCD3F5500996DC8 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0F0361DCD3F5500996DC8 /* FeedVC.swift */; };
 		1FECFBC01DCBB3CE00CF164E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FECFBBF1DCBB3CE00CF164E /* AppDelegate.swift */; };
 		1FECFBC21DCBB3CE00CF164E /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FECFBC11DCBB3CE00CF164E /* SignInVC.swift */; };
 		1FECFBC51DCBB3CE00CF164E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FECFBC31DCBB3CE00CF164E /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		03F622E5409E4F93930C2F82 /* Pods_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F8681DD1DCD2C0900AF2293 /* Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Share.entitlements; sourceTree = "<group>"; };
+		1FD0F0361DCD3F5500996DC8 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		1FECFBBC1DCBB3CE00CF164E /* Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Share.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FECFBBF1DCBB3CE00CF164E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FECFBC11DCBB3CE00CF164E /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				1FECFBC11DCBB3CE00CF164E /* SignInVC.swift */,
+				1FD0F0361DCD3F5500996DC8 /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				1FECFBD81DCBDD6500CF164E /* CustomView.swift in Sources */,
 				1FECFBDD1DCBDFAC00CF164E /* RoundButton.swift in Sources */,
 				1FECFBDF1DCBE16C00CF164E /* CustomTextField.swift in Sources */,
+				1FD0F0371DCD3F5500996DC8 /* FeedVC.swift in Sources */,
 				1FECFBC21DCBB3CE00CF164E /* SignInVC.swift in Sources */,
 				1FECFBC01DCBB3CE00CF164E /* AppDelegate.swift in Sources */,
 				1FECFBDB1DCBDDEE00CF164E /* Constants.swift in Sources */,
