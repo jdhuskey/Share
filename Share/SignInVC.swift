@@ -73,7 +73,8 @@ class SignInVC: UIViewController {
                 print("JEFF: Successfully authenticated with Firebase")
                 if let user = user {
                     
-                    self.completeSignIn(id: user.uid)
+                    let userData = ["provider" : credential.provider]
+                    self.completeSignIn(id: user.uid, userData: userData)
                     
                 }
             }
@@ -91,7 +92,8 @@ class SignInVC: UIViewController {
                     print("JEFF: Email user successfully authenticated with Firebase")
                     if let user = user {
                         
-                        self.completeSignIn(id: user.uid)
+                        let userData = ["provider" : user.providerID]
+                        self.completeSignIn(id: user.uid, userData: userData)
                         
                     }
                     
@@ -108,7 +110,8 @@ class SignInVC: UIViewController {
                             print("JEFF: Email user successfully created and authenticated with Firebase")
                             if let user = user {
                                 
-                                self.completeSignIn(id: user.uid)
+                                let userData = ["provider" : user.providerID]
+                                self.completeSignIn(id: user.uid, userData: userData)
                                 
                             }
                             
@@ -119,7 +122,9 @@ class SignInVC: UIViewController {
         }
     }
     
-    func completeSignIn(id: String) {
+    func completeSignIn(id: String, userData: Dictionary<String, String>) {
+        
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         
         let saveToKeychainSuccessful = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         
