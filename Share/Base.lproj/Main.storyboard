@@ -176,10 +176,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WN0-8n-8LX" userLabel="New Post Custom View" customClass="CustomView" customModule="Share" customModuleProvider="target">
-                                <rect key="frame" x="20" y="101" width="374" height="65"/>
+                                <rect key="frame" x="16" y="101" width="382" height="65"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JFr-9T-m7V" userLabel="New Post Stack View">
-                                        <rect key="frame" x="8" y="8" width="358" height="49"/>
+                                        <rect key="frame" x="8" y="8" width="366" height="49"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="Vxs-cL-jPu" customClass="RoundImageView" customModule="Share" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
@@ -190,13 +190,13 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="add a caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AkQ-gH-Wlj" customClass="CustomTextField" customModule="Share" customModuleProvider="target">
-                                                <rect key="frame" x="57" y="0.0" width="244" height="49"/>
+                                                <rect key="frame" x="57" y="0.0" width="252" height="49"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLC-lx-wXY" customClass="RoundButton" customModule="Share" customModuleProvider="target">
-                                                <rect key="frame" x="309" y="0.0" width="49" height="49"/>
+                                                <rect key="frame" x="317" y="0.0" width="49" height="49"/>
                                                 <color key="backgroundColor" red="0.0" green="0.7843137255" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="49" id="pub-iM-e0p"/>
@@ -262,10 +262,10 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="kj5-n1-PND">
-                                                                    <rect key="frame" x="0.0" y="58" width="366" height="312.33333333333331"/>
+                                                                    <rect key="frame" x="0.0" y="58" width="366" height="355"/>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dQU-TK-WIQ">
-                                                                    <rect key="frame" x="0.0" y="378.33333333333326" width="366" height="108.66666666666669"/>
+                                                                    <rect key="frame" x="0.0" y="421" width="366" height="66"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="762-O1-dpx"/>
@@ -341,12 +341,12 @@
                             <constraint firstAttribute="trailing" secondItem="pZi-MI-HuU" secondAttribute="trailing" id="40f-V5-0Cv"/>
                             <constraint firstItem="pZi-MI-HuU" firstAttribute="top" secondItem="WN0-8n-8LX" secondAttribute="bottom" constant="16" id="50y-Eh-Uxm"/>
                             <constraint firstAttribute="trailing" secondItem="Npc-cK-jb3" secondAttribute="trailing" id="Dqx-KS-jYB"/>
-                            <constraint firstItem="WN0-8n-8LX" firstAttribute="trailing" secondItem="aoW-JV-8cU" secondAttribute="trailingMargin" id="Ein-zi-dwm"/>
+                            <constraint firstItem="WN0-8n-8LX" firstAttribute="trailing" secondItem="aoW-JV-8cU" secondAttribute="trailing" constant="-16" id="Ein-zi-dwm"/>
                             <constraint firstItem="pZi-MI-HuU" firstAttribute="leading" secondItem="aoW-JV-8cU" secondAttribute="leading" id="bLJ-3e-RG5"/>
                             <constraint firstItem="WN0-8n-8LX" firstAttribute="top" secondItem="Npc-cK-jb3" secondAttribute="bottom" constant="16" id="pX3-ch-2vj"/>
                             <constraint firstItem="ybZ-RV-Khr" firstAttribute="top" secondItem="pZi-MI-HuU" secondAttribute="bottom" id="raE-pj-1yL"/>
                             <constraint firstItem="Npc-cK-jb3" firstAttribute="leading" secondItem="aoW-JV-8cU" secondAttribute="leading" id="w7Y-hp-5T7"/>
-                            <constraint firstItem="WN0-8n-8LX" firstAttribute="leading" secondItem="aoW-JV-8cU" secondAttribute="leadingMargin" id="y5M-dL-Qgy"/>
+                            <constraint firstItem="WN0-8n-8LX" firstAttribute="leading" secondItem="aoW-JV-8cU" secondAttribute="leading" constant="16" id="y5M-dL-Qgy"/>
                         </constraints>
                     </view>
                     <connections>
