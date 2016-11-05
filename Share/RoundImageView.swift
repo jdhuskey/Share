@@ -1,15 +1,15 @@
 //
-//  RoundButton.swift
+//  RoundImageView.swift
 //  Share
 //
-//  Created by Jeffrey D Huskey on 11/3/16.
+//  Created by Jeffrey D Huskey on 11/4/16.
 //  Copyright © 2016 FavoredFruit. All rights reserved.
 //
 
 import UIKit
 
-class RoundButton: UIButton {
-
+class RoundImageView: UIImageView {
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -18,10 +18,7 @@ class RoundButton: UIButton {
         layer.shadowOpacity = 0.8
         layer.shadowRadius = 5.0
         layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-
-        // IMAGE CONTENT MODE
-        imageView?.contentMode = .scaleAspectFit
-        
+                
     }
     
     override func layoutSubviews() {
@@ -31,5 +28,6 @@ class RoundButton: UIButton {
         layer.cornerRadius = self.frame.width / 2
         
     }
+
     
 }
