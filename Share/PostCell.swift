@@ -19,10 +19,16 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var likedImage: UIImageView!
     
     var post: Post!
+    var likesReference: FIRDatabaseReference!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
+        tap.numberOfTapsRequired = 1
+        likedImage.addGestureRecognizer(tap)
+        likedImage.isUserInteractionEnabled = true
+        
     }
 
     func configureCell(post: Post, image: UIImage? = nil) {
@@ -31,6 +37,9 @@ class PostCell: UITableViewCell {
         self.post = post
         self.caption.text = post.caption
         self.likesLabel.text = "\(post.likes)"
+        
+        // Setup for setting Likes Image and Value
+        likesReference = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
         
         // Setting Images in Post
         if image != nil {
@@ -65,6 +74,40 @@ class PostCell: UITableViewCell {
             })
             
         }
+        
+        likesReference.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let _ = snapshot.value as? NSNull {
+                
+                self.likedImage.image = UIImage(named: "empty-heart")
+                
+            } else {
+                
+                self.likedImage.image = UIImage(named: "filled-heart")
+                
+            }
+        })
+        
+    }
+    
+    func likeTapped(sender: UITapGestureRecognizer) {
+        
+        likesReference.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let _ = snapshot.value as? NSNull {
+                
+                self.likedImage.image = UIImage(named: "filled-heart")
+                self.post.adjustLikes(addLike: true)
+                self.likesReference.setValue(true)
+                
+            } else {
+                
+                self.likedImage.image = UIImage(named: "empty-heart")
+                self.post.adjustLikes(addLike: false)
+                self.likesReference.removeValue()
+                
+            }
+        })
         
     }
     

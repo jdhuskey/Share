@@ -36,7 +36,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
         
-            //print(snapshot.value as Any)
+            self.posts = [] // This clears the posts array so that when the table reloads, the posts are not duplicated.
             
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 
@@ -151,14 +151,38 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                 } else {
                     
                     print("JEFF: Successfully uploaded image to Firebase storage.")
-                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                    let downloadUrl = metadata?.downloadURL()?.absoluteString
                     
+                    if let url = downloadUrl {
+                        
+                        self.postToFirebase(imageUrl: url)
+                        
+                    }
                     
                 }
                 
             }
             
         }
+        
+    }
+    
+    func postToFirebase(imageUrl: String) {
+        
+        let post: Dictionary<String, Any> = [
+            "caption": captionField.text!,
+            "imageUrl": imageUrl,
+            "likes": 0
+        ]
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        captionField.text = ""
+        imageSelected = false
+        addImage.image = UIImage(named: "add-image")
+        
+        tableView.reloadData()
         
     }
     
