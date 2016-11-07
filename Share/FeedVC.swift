@@ -15,10 +15,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addImage: RoundImageView!
+    @IBOutlet weak var captionField: CustomTextField!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
+    var imageSelected = false
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    
     
 
     override func viewDidLoad() {
@@ -72,7 +75,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         let post = posts[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
-                        
+            
             if let image = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
                 
                 cell.configureCell(post: post, image: image)
@@ -85,15 +88,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
 
             }
             
-            
         } else {
         
             return PostCell()
             
         }
-        
-        //return tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
-        //return UITableViewCell()
         
     }
     
@@ -102,19 +101,64 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             
             addImage.image = image
+            imageSelected = true
             
         } else {
             
+            imageSelected = false
             print("JEFF: A valid image wasn't selected.")
             
         }
+        
         imagePicker.dismiss(animated: true, completion: nil)
+        
     }
     
     @IBAction func addImageTapped(_ sender: Any) {
         
         present(imagePicker, animated: true, completion: nil)
         
+    }
+    
+    @IBAction func postTapped(_ sender: Any) {
+        
+        guard let caption = captionField.text, caption != "" else {
+            
+            print("JEFF: Caption must be entered.")
+            return
+            
+        }
+        
+        guard let image = addImage.image, imageSelected == true else {
+            
+            print("JEFF: An image must be selected.")
+            return
+            
+        }
+        
+        if let imageData = UIImageJPEGRepresentation(image, 0.2) {
+            
+            let imageUid = NSUUID().uuidString // This creates a unique string for the name of the image so that no images will have the same name.
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            DataService.ds.REF_POST_IMAGES.child(imageUid).put(imageData, metadata: metadata) { (metadata, error) in
+                
+                if error != nil {
+                    
+                    print("JEFF: Unable to upload image to Firebase storage.")
+                    
+                } else {
+                    
+                    print("JEFF: Successfully uploaded image to Firebase storage.")
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                    
+                    
+                }
+                
+            }
+            
+        }
         
     }
     
