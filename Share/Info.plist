@@ -66,5 +66,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Access to your photo library is required to allow you to choose a photo to post.</string>
 </dict>
 </plist>
